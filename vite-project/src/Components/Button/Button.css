@@ -1,0 +1,17 @@
+.button{
+    border-radius: 50px;
+    padding: 12px 24px 12px 24px;
+    gap: 24px;
+    background-color: rgb(73,30,75,1);
+    color: white;
+    font-weight: 500;
+    font-family: "Poppins";
+
+    
+}
+
+.button-info{
+    gap: 24px;
+    display: flex;
+    justify-content: space-around;
+}

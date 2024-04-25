@@ -1,0 +1,29 @@
+.sidebar-container{
+    width: 100%;
+    max-width:300px
+    /* background-color: green; */
+}
+
+.sidebar-text{
+    height: 54px;
+    border: solid 1px;
+    padding: 16px 24px 16px 24px;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21.78px;
+    border-color: rgba(73, 30, 75, 0.05);
+    color:rgba(0,12,34,1);
+
+}
+
+.sidebar-text:hover{
+    background-color:rgba(73,30,75,1) ;
+    color: white;
+}
+
+.highlight {
+    background-color: rgba(73,30,75,1);
+    color: white;
+  }
+  

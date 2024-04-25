@@ -1,0 +1,10 @@
+.category-section{
+    width: 100%;
+    gap: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+    margin: auto;
+}

@@ -1,0 +1,44 @@
+.category-container{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width:100%;
+    height: 710px;
+    gap: 48px;
+}
+
+.text-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 674px;
+    height: 64px;
+    gap: 40px;
+}
+
+.card-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    height: 598px;
+    
+}
+
+.main-text{
+    width: 450px;
+    height: 64px;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 56px;
+    line-height: 64px;
+    color: rgba(0, 12, 34, 1);
+}
+
+.button-category{
+    width: 184px;
+    height: 46px;
+
+}

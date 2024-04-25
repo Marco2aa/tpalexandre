@@ -1,0 +1,19 @@
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 24px 0 ;
+    height: 75px;
+    gap: 64px;
+    
+}
+
+.link{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26.63px;
+    letter-spacing: 1%;
+    text-decoration: none;
+    color: black;
+}
