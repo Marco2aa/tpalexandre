@@ -17,7 +17,7 @@ const Card = ({ onClick, brand, name, price, image }) => {
 
           <p className="text-info-main">{name}</p>
         </div>
-        <p className="money">{price}</p>
+        <p className="money">{price}$</p>
       </div>
     </div>
   );

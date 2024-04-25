@@ -56,7 +56,10 @@ const Accueil = () => {
       >
         <HeroSection />
         <CategorySection>
-          <Categories typo="MEN'S WATCHES">
+          <Categories
+            onClick={() => navigate(`/category/${watches}`)}
+            typo="MEN'S WATCHES"
+          >
             {datas.map((item) => (
               <Card
                 key={item.id}
@@ -68,7 +71,10 @@ const Accueil = () => {
               />
             ))}
           </Categories>
-          <Categories typo="SMARTPHONES">
+          <Categories
+            onClick={() => navigate(`/category/${smartphone}`)}
+            typo="SMARTPHONES"
+          >
             {dataSmartphones.map((item) => (
               <Card
                 key={item.id}

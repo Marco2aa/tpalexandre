@@ -6,6 +6,7 @@ import Accueil from "./Pages/Accueil";
 import Header from "./Components/Header/Header";
 import Products from "./Pages/Products";
 import Details from "./Pages/Details";
+import Category from "./Pages/Category";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Accueil />} />
           <Route path="/products" element={<Products />} />
           <Route path="/details/:id" element={<Details />} />
+          <Route path="/category/:id" element={<Category />} />
         </Routes>
       </BrowserRouter>
     </>

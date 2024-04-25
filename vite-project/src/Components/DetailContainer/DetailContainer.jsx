@@ -68,6 +68,9 @@ const DetailContainer = () => {
           style={{
             position: "sticky",
             top: "48px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "32px",
           }}
         >
           <div>
