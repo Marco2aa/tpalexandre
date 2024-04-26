@@ -3,7 +3,7 @@ import Layout from "../Components/Layout/Layout";
 import Sidebar from "../Components/Sidebar/Sidebar";
 import image from "../assets/images/image.png";
 import Card from "../Components/Card/Card";
-import { GetProductByCategory, GetProducts } from "../Config/Api";
+
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 

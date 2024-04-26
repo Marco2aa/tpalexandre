@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./Sidebar.css";
-import { GetCategories } from "../../Config/Api";
 import axios from "axios";
 
 const Sidebar = ({ onClick }) => {
