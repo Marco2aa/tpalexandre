@@ -9,7 +9,9 @@ const Sidebar = ({ onClick }) => {
 
   const FetchCategories = async () => {
     try {
-      const response = await axios.get(GetCategories());
+      const response = await axios.get(
+        "https://dummyjson.com/products/categories"
+      );
       const data = response.data;
       console.log(data);
       setCategories(data);

@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Card from "../Card/Card";
 import { useNavigate } from "react-router-dom";
-import Categories from "../Categories/Categories";
 
 const DetailCategory = () => {
   const params = useParams();

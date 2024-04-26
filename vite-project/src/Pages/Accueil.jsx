@@ -5,7 +5,6 @@ import CategorySection from "../Components/CategorySection/CategorySection";
 import Categories from "../Components/Categories/Categories";
 import Card from "../Components/Card/Card";
 import axios from "axios";
-import { GetProductByCategorie } from "../Config/Api";
 import { useNavigate } from "react-router-dom";
 
 const Accueil = () => {
@@ -15,18 +14,22 @@ const Accueil = () => {
   const [dataSmartphones, setDataSmartphones] = useState([]);
   const navigate = useNavigate();
 
-  const FetchDataWatches = async () => {
+  const FetchDataWatches = async (category, limit) => {
     try {
-      const response = await axios.get(GetProductByCategorie(watches, 3));
+      const response = await axios.get(
+        `https://dummyjson.com/products/category/${category}/?limit=${limit}`
+      );
       const data = response.data;
       setDataWatches(data.products);
     } catch (error) {
       console.error(error);
     }
   };
-  const FetchDataSmartphones = async () => {
+  const FetchDataSmartphones = async (category, limit) => {
     try {
-      const response = await axios.get(GetProductByCategorie(smartphone, 3));
+      const response = await axios.get(
+        `https://dummyjson.com/products/category/${category}/?limit=${limit}`
+      );
       const data = response.data;
       console.log(dataSmartphones);
       setDataSmartphones(data.products);
@@ -36,8 +39,8 @@ const Accueil = () => {
   };
 
   useEffect(() => {
-    FetchDataWatches();
-    FetchDataSmartphones();
+    FetchDataWatches(watches, 3);
+    FetchDataSmartphones(smartphone, 3);
   }, []);
 
   return (

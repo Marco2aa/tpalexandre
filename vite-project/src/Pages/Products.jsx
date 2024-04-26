@@ -17,7 +17,9 @@ const Products = () => {
     }
 
     try {
-      const response = await axios.get(GetProductByCategory(category));
+      const response = await axios.get(
+        `https://dummyjson.com/products/category/${category}`
+      );
       const data = response.data;
       console.log(data);
       console.log(category);
@@ -28,7 +30,9 @@ const Products = () => {
   };
   const fetchProducts = async () => {
     try {
-      const response = await axios.get(GetProducts());
+      const response = await axios.get(
+        `https://dummyjson.com/products?limit=0`
+      );
       const data = response.data;
       console.log("PRODUITS", data);
       setProducts(data.products);
