@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 const Accueil = () => {
   const smartphone = "smartphones";
   const watches = "mens-watches";
-  const [datas, setDatas] = useState([]);
+  const [dataWatches, setDataWatches] = useState([]);
   const [dataSmartphones, setDataSmartphones] = useState([]);
   const navigate = useNavigate();
 
@@ -19,8 +19,7 @@ const Accueil = () => {
     try {
       const response = await axios.get(GetProductByCategorie(watches, 3));
       const data = response.data;
-      // console.log(data);
-      setDatas(data.products);
+      setDataWatches(data.products);
     } catch (error) {
       console.error(error);
     }
@@ -41,8 +40,6 @@ const Accueil = () => {
     FetchDataSmartphones();
   }, []);
 
-  console.log(datas);
-
   return (
     <Layout>
       <div
@@ -58,31 +55,25 @@ const Accueil = () => {
         <CategorySection>
           <Categories
             onClick={() => navigate(`/category/${watches}`)}
-            typo="MEN'S WATCHES"
+            title="MEN'S WATCHES"
           >
-            {datas.map((item) => (
+            {dataWatches.map((item) => (
               <Card
                 key={item.id}
                 onClick={() => navigate(`/details/${item.id}`)}
-                brand={item.brand}
-                name={item.title}
-                price={item.price}
-                image={item.thumbnail}
+                product={item}
               />
             ))}
           </Categories>
           <Categories
             onClick={() => navigate(`/category/${smartphone}`)}
-            typo="SMARTPHONES"
+            title="SMARTPHONES"
           >
             {dataSmartphones.map((item) => (
               <Card
                 key={item.id}
                 onClick={() => navigate(`/details/${item.id}`)}
-                brand={item.brand}
-                name={item.title}
-                price={item.price}
-                image={item.thumbnail}
+                product={item}
               />
             ))}
           </Categories>

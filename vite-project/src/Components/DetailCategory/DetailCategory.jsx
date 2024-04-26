@@ -4,51 +4,41 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Card from "../Card/Card";
 import { useNavigate } from "react-router-dom";
+import Categories from "../Categories/Categories";
 
 const DetailCategory = () => {
   const params = useParams();
-  console.log(params.id);
-  const [datas, setDatas] = useState([]);
+  const [products, setProducts] = useState([]);
   const navigate = useNavigate();
 
-  const fetchDatas = async () => {
+  const fetchProductByCategory = async (category) => {
     try {
       const response = await axios.get(
-        `https://dummyjson.com/products/category/${params.id}`
+        `https://dummyjson.com/products/category/${category}`
       );
       const data = response.data;
       console.log(data);
-      setDatas(data.products);
+      setProducts(data.products);
     } catch (error) {
       console.error(error);
     }
   };
 
   useEffect(() => {
-    fetchDatas();
+    fetchProductByCategory(params.slug);
   }, []);
+
+  const slugUpperCase = params.slug.toUpperCase();
+
   return (
     <div className="detail-container">
-      <p
-        style={{
-          fontWeight: 500,
-          fontFamily: "Poppins",
-          fontSize: "56px",
-          lineHeight: "64px",
-          textTransform: "uppercase",
-        }}
-      >
-        {params.id}
-      </p>
+      <p className="detail-container-text">{slugUpperCase}</p>
       <div className="grid-container">
-        {datas.map((data, index) => (
+        {products.map((data) => (
           <Card
             key={data.id}
             onClick={() => navigate(`/details/${data.id}`)}
-            brand={data.brand}
-            title={data.title}
-            price={data.price}
-            image={data.thumbnail}
+            product={data}
           />
         ))}
       </div>

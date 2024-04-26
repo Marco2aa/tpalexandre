@@ -8,7 +8,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Products = () => {
-  const [data, setData] = useState([]);
+  const [products, setProducts] = useState([]);
   const navigate = useNavigate();
   const handleProductsByCategory = async (category) => {
     if (!category) {
@@ -21,7 +21,7 @@ const Products = () => {
       const data = response.data;
       console.log(data);
       console.log(category);
-      setData(data.products);
+      setProducts(data.products);
     } catch (error) {
       console.error(error);
     }
@@ -31,7 +31,7 @@ const Products = () => {
       const response = await axios.get(GetProducts());
       const data = response.data;
       console.log("PRODUITS", data);
-      setData(data.products);
+      setProducts(data.products);
     } catch (error) {
       console.error(error);
     }
@@ -72,18 +72,15 @@ const Products = () => {
           <div
             style={{
               display: "grid",
-              gap: "16px",
+              gap: "32px",
               gridTemplateColumns: "repeat(3,1fr)",
             }}
           >
-            {data.map((item) => (
+            {products.map((item) => (
               <Card
                 key={item.id}
                 onClick={() => navigate(`/details/${item.id}`)}
-                brand={item.brand}
-                name={item.title}
-                price={item.price}
-                image={item.thumbnail}
+                product={item}
               />
             ))}
           </div>

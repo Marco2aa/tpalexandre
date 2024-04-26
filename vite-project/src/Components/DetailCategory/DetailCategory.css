@@ -4,8 +4,14 @@
   gap: 24px;
 }
 
-.grid-container > :last-child {
-  grid-column: span 2;
+.detail-container-text{
+  
+    font-weight: 500;
+    font-family:  "Poppins";
+    font-size:  56px;
+    line-height:  64px;
+    text-transform:  uppercase,
+  
 }
 
 .detail-container{

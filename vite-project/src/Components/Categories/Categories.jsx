@@ -2,15 +2,15 @@ import React from "react";
 import "./Categories.css";
 import Button from "../Button/Button";
 
-const Categories = ({ onClick, typo, children }) => {
+const Categories = ({ onClick, title, children }) => {
   return (
     <div className="category-container">
       <div className="text-wrapper">
-        <p className="main-text">{typo}</p>
+        <p className="main-text">{title}</p>
         <Button
           onClick={onClick}
           title="TOUT VOIR"
-          buttonWidth="184px"
+          buttonWidth="200px"
           buttonHeight="46px"
         />
       </div>
